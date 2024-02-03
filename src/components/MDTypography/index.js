@@ -1,4 +1,3 @@
-
 import { forwardRef } from "react";
 
 // prop-types is a library for typechecking of props
@@ -22,7 +21,7 @@ const MDTypography = forwardRef(
       <MDTypographyRoot
         {...rest}
         ref={ref}
-        ownerstate={{
+        ownerState={{
           color,
           textTransform,
           verticalAlign,

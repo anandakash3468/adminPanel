@@ -20,7 +20,7 @@ import { CssBaseline } from '@mui/material';
 import Configurator from "./pagecomponents/Configurator";
 import brandWhite from "./assets/images/logo-ct.jpeg";
 import brandDark from "./assets/images/logo-ct-dark.png";
-import { Settings, SettingsAccessibilityOutlined } from '@mui/icons-material';
+import { Settings } from '@mui/icons-material';
 const App = () => {
   const [controller, dispatch] = useMaterialUIController();
   const [onMouseEnter, setOnMouseEnter] = useState(false);

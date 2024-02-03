@@ -1,10 +1,10 @@
 import { Box, useTheme, IconButton, Typography } from '@mui/material';
 import React, { useState } from 'react'
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
-import { tokens } from '../../themes/themes';
+import { tokens } from '../../src/themes/themes';
 
 import { Link, NavLink } from 'react-router-dom';
-import { sideMenuLinks } from '../../utils/sideMenuLinks';
+import { sideMenuLinks } from '../../src/utils/sideMenuLinks';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();

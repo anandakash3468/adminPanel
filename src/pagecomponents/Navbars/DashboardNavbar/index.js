@@ -21,10 +21,10 @@ import {
   setMiniSidenav,
   setOpenConfigurator,
 } from "../../../context";
-import { Box, Input } from "@mui/material";
-
+import { Input } from "@mui/material";
+import Breadcrumbs from "../../Breadcrumbs";
 function DashboardNavbar({ absolute, light, isMini }) {
-  console.log("absolute, light, isMiniabsolute, light, isMini",absolute, light, isMini)
+  console.log("absolute, light, isMiniabsolute, light, isMini", absolute, light, isMini)
   const [navbarType, setNavbarType] = useState();
   const [controller, dispatch] = useMaterialUIController();
   const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator, darkMode } = controller;
@@ -86,9 +86,9 @@ function DashboardNavbar({ absolute, light, isMini }) {
     >
       <Toolbar sx={(theme) => navbarContainer(theme)}>
         <MDBox color="inherit" mb={{ xs: 1, md: 0 }} sx={(theme) => navbarRow(theme, { isMini })}>
-          <Box>
-            breadcrumps Area
-          </Box>
+          <MDBox color="inherit" mb={{ xs: 1, md: 0 }} sx={(theme) => navbarRow(theme, { isMini })}>
+            <Breadcrumbs icon="home" title={route[route.length - 1]} route={route} light={light} />
+          </MDBox>
         </MDBox>
         {isMini ? null : (
           <MDBox sx={(theme) => navbarRow(theme, { isMini })}>

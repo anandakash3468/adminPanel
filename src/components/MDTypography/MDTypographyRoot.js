@@ -1,11 +1,10 @@
-
 import Typography from "@mui/material/Typography";
-import styled from '@emotion/styled';
+import { styled } from "@mui/material/styles";
 
-export default styled(Typography)(({ theme, ownerstate }) => {
+export default styled(Typography)(({ theme, ownerState }) => {
   const { palette, typography, functions } = theme;
   const { color, textTransform, verticalAlign, fontWeight, opacity, textGradient, darkMode } =
-    ownerstate;
+    ownerState;
 
   const { gradients, transparent, white } = palette;
   const { fontWeightLight, fontWeightRegular, fontWeightMedium, fontWeightBold } = typography;
