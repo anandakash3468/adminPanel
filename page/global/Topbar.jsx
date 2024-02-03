@@ -14,8 +14,6 @@ import React from "react";
 const Topbar = ({ isCollapsed, setIsCollapsed, handleCollapse }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
-  console.log("colorscolors", colors);
   const colorMode = useContext(colorModeContext);
   return (
     <Box

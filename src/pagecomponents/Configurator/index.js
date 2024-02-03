@@ -23,6 +23,7 @@ import {
   setSidenavColor,
   setDarkMode,
 } from "../../context";
+import { CloseOutlined } from "@mui/icons-material";
 
 function Configurator() {
   const [controller, dispatch] = useMaterialUIController();
@@ -102,7 +103,6 @@ function Configurator() {
       color: darkMode ? background.sidenav : white.main,
     },
   });
-
   return (
     <ConfiguratorRoot variant="permanent" ownerstate={{ openConfigurator }}>
       <MDBox
@@ -128,7 +128,7 @@ function Configurator() {
           })}
           onClick={handleCloseConfigurator}
         >
-          close
+          <CloseOutlined/>
         </Icon>
       </MDBox>
 

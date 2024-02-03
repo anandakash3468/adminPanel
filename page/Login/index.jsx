@@ -35,7 +35,7 @@ export default function SignInSide() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
+    //console.log({
       email: data.get('email'),
       password: data.get('password'),
     });

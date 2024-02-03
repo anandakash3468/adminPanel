@@ -31,31 +31,7 @@ const routes = [
     icon: <Icon fontSize="small"><MonetizationOnIcon/></Icon>,
     route: "/billing",
     component: <Billing />,
-  },
-  {
-    type: "collapse",
-    name: "Dashboard",
-    key: "dashboard",
-    icon: <Icon fontSize="small"><DashboardIcon/></Icon>,
-    route: "/dashboard",
-    component: <Dashboard />,
-  },
-  {
-    type: "collapse",
-    name: "Tables",
-    key: "tables",
-    icon: <Icon fontSize="small"><TableViewIcon/></Icon>,
-    route: "/tables",
-    component: <Tables />,
-  },
-  {
-    type: "collapse",
-    name: "Billing",
-    key: "billing",
-    icon: <Icon fontSize="small"><MonetizationOnIcon/></Icon>,
-    route: "/billing",
-    component: <Billing />,
-  },
+  }
   // {
   //   type: "collapse",
   //   name: "RTL",

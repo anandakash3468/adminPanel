@@ -16,7 +16,6 @@ import { useMaterialUIController } from "../../context";
 function SidenavCollapse({ icon, name, active, ...rest }) {
   const [controller] = useMaterialUIController();
   const { miniSidenav, transparentSidenav, whiteSidenav, darkMode, sidenavColor } = controller;
-
   return (
     <ListItem component="li">
       <MDBox
@@ -51,6 +50,7 @@ function SidenavCollapse({ icon, name, active, ...rest }) {
               transparentSidenav,
               whiteSidenav,
               active,
+              sidenavColor
             })
           }
         />

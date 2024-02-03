@@ -1,16 +1,17 @@
-function collapseItem(theme, ownerstate) {
-  const { palette, transitions, breakpoints, boxShadows, borders, functions } = theme;
-  const { active, transparentSidenav, whiteSidenav, darkMode, sidenavColor } = ownerstate;
 
+function collapseItem(theme, ownerState) {
+  const { palette, transitions, breakpoints, boxShadows, borders, functions } = theme;
+  const { active, transparentSidenav, whiteSidenav, darkMode, sidenavColor } = ownerState;
   const { white, transparent, dark, grey, gradients } = palette;
   const { md } = boxShadows;
   const { borderRadius } = borders;
-  const { pxToRem, rgba, linearGradient } = functions;
-
+  const { pxToRem, rgba } = functions;
+  let gradientMainValue = gradients[sidenavColor].main;
+  let gradientStateValue = gradients[sidenavColor].state;
   return {
-    background: active
-      ? linearGradient(gradients[sidenavColor].main, gradients[sidenavColor].state)
-      : transparent.main,
+    background: active ?
+      `linear-gradient(${gradientMainValue}, ${gradientStateValue}) !important`
+      : `${transparent.main} !important`,
     color:
       (transparentSidenav && !darkMode && !active) || (whiteSidenav && !active)
         ? dark.main
@@ -49,9 +50,9 @@ function collapseItem(theme, ownerstate) {
   };
 }
 
-function collapseIconBox(theme, ownerstate) {
+function collapseIconBox(theme, ownerState) {
   const { palette, transitions, borders, functions } = theme;
-  const { transparentSidenav, whiteSidenav, darkMode, active } = ownerstate;
+  const { transparentSidenav, whiteSidenav, darkMode, active } = ownerState;
 
   const { white, dark } = palette;
   const { borderRadius } = borders;
@@ -82,9 +83,9 @@ const collapseIcon = ({ palette: { white, gradients } }, { active }) => ({
   color: active ? white.main : gradients.dark.state,
 });
 
-function collapseText(theme, ownerstate) {
+function collapseText(theme, ownerState) {
   const { typography, transitions, breakpoints, functions } = theme;
-  const { miniSidenav, transparentSidenav, active } = ownerstate;
+  const { miniSidenav, transparentSidenav, active } = ownerState;
 
   const { size, fontWeightRegular, fontWeightLight } = typography;
   const { pxToRem } = functions;

@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import HomeIcon from '@mui/icons-material/Home';
 import MdTypography from "../../components/MDTypography"
 function Breadcrumbs({ icon, title, route, light }) {
-    console.log("routes is", route);
+    //console.log("routes is", route);
     const routes = route.slice(0, -1);
-    console.log("const routes = route.slice(0, -1);", routes)
+    //console.log("const routes = route.slice(0, -1);", routes)
     return (
         <MDBox mr={{ xs: 0, xl: 8, mt: 2 }}>
             <MuiBreadcrumbs

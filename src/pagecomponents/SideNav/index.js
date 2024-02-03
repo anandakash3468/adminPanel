@@ -1,28 +1,23 @@
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import Link from "@mui/material/Link";
-import routes from "../../routes";
 import Icon from "@mui/material/Icon";
-import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
 import { useLocation, NavLink } from "react-router-dom";
 import React from 'react';
 import SidenavRoot from "./SidenavRoot"
 import {
   useMaterialUIController,
   setMiniSidenav,
-  setTransparentSidenav,
-  setWhiteSidenav,
 } from "../../context";
-import { Button } from "@mui/material";
 import MDTypography from "../../components/MDTypography";
 import SidenavCollapse from "./SidenavCollapse";
 import MDBox from "../../components/MdBox";
 import sidenavLogoLabel from "./styles/sidenav";
 const SideNav = ({ color, brand, brandName, routes, ...rest }) => {
-  console.log("colorcolorcolorcolorcolor is",color)
+
   const [controller, dispatch] = useMaterialUIController();
-  const { miniSidenav, transparentSidenav, whiteSidenav, darkMode, sidenavColor } = controller;
+  const { miniSidenav, transparentSidenav, whiteSidenav, darkMode } = controller;
+
   const location = useLocation();
   const collapseName = location.pathname.replace("/", "");
   let textColor = "white";
@@ -31,12 +26,8 @@ const SideNav = ({ color, brand, brandName, routes, ...rest }) => {
     textColor = "dark";
   } else if (whiteSidenav && darkMode) {
     textColor = "inherit";
-  }
-  console.log("textColortextColortextColor", textColor)
+  };
   const closeSidenav = () => setMiniSidenav(dispatch, true);
-
-  // SidebAr
-  // Render all the routes from the routes.js (All the visible items on the Sidenav)
   const renderRoutes = routes.map(({ type, name, icon, title, noCollapse, key, href, route }) => {
     let returnValue;
 

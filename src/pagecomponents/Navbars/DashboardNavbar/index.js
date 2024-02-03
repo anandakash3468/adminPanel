@@ -7,6 +7,7 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import Icon from "@mui/material/Icon";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MDBox from "../../../components/MdBox";
 import {
   navbar,
@@ -23,8 +24,8 @@ import {
 } from "../../../context";
 import { Input } from "@mui/material";
 import Breadcrumbs from "../../Breadcrumbs";
+import { Notifications, Settings } from "@mui/icons-material";
 function DashboardNavbar({ absolute, light, isMini }) {
-  console.log("absolute, light, isMiniabsolute, light, isMini", absolute, light, isMini)
   const [navbarType, setNavbarType] = useState();
   const [controller, dispatch] = useMaterialUIController();
   const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator, darkMode } = controller;
@@ -73,7 +74,6 @@ function DashboardNavbar({ absolute, light, isMini }) {
       if (transparentNavbar && !light) {
         colorValue = darkMode ? rgba(text.main, 0.6) : text.main;
       }
-
       return colorValue;
     },
   });
@@ -98,7 +98,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
             <MDBox color={light ? "white" : "inherit"}>
               <Link to="/authentication/sign-in/basic">
                 <IconButton sx={navbarIconButton} size="small" disableRipple>
-                  <Icon sx={iconsStyle}>account_circle</Icon>
+                  <Icon sx={iconsStyle}><AccountCircleIcon size="large" /></Icon>
                 </IconButton>
               </Link>
               <IconButton
@@ -119,7 +119,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
                 sx={navbarIconButton}
                 onClick={handleConfiguratorOpen}
               >
-                <Icon sx={iconsStyle}>settings</Icon>
+                <Icon sx={iconsStyle}><Settings /></Icon>
               </IconButton>
               <IconButton
                 size="small"
@@ -131,7 +131,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
                 variant="contained"
                 onClick={handleOpenMenu}
               >
-                <Icon sx={iconsStyle}>notifications</Icon>
+                <Icon sx={iconsStyle}><Notifications /></Icon>
               </IconButton>
               {renderMenu()}
             </MDBox>
